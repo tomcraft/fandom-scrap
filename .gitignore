@@ -1,0 +1,4 @@
+.DS_Store
+__pycache__
+block_list.json
+detailed_block_list.json
