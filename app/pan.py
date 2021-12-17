@@ -4,7 +4,7 @@ from bs4 import BeautifulSoup, Tag
 def heat_soup(url, cache=[]):
     print("Scrapping page", url, "...")
     request = requests.get(url, allow_redirects=False)
-    if request.status_code == 301 or request.status_code == 302:
+    if request.status_code / 100 == 3:
         url_effective = request.headers['location']
         if url_effective in cache:
             return url_effective, None
