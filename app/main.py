@@ -7,7 +7,7 @@ if blocks is None:
     print("Found nothing, getting it online")
     start = time.time()
     blocks = pan.read_block_list()
-    print("Finished in", util.format_duration(start, time.time()), ', saving to file...')
+    print("Finished in", util.format_duration(start, time.time()))
     print('Saving to file...')
     datastore.save_block_list(blocks)
     blocks = datastore.load_block_list()
@@ -23,7 +23,7 @@ if detailed_blocks is None:
     cache_soup, cache_properties = [], {}
     for block in detailed_blocks:
         block['properties'] = pan.read_block_properties(block['url'], cache_soup, cache_properties)
-    print("Finished in", util.format_duration(start, time.time()), ', saving to file...')
+    print("Finished in", util.format_duration(start, time.time()))
     print('Saving to file...')
     datastore.save_detailed_block_list(detailed_blocks)
     detailed_blocks = datastore.load_detailed_block_list()
